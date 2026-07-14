@@ -1,13 +1,19 @@
 from django.shortcuts import render
 import random
 
+# --- 학습 모드 미션 데이터 ---
+# 카테고리별로 target 가게와 인분 수 확정. 메뉴/추가주문은 아직 미정이라 공란.
 # Create your views here.
 def main(request):
     return render(request, 'deliverys/main.html')
 
 # --- 학습 모드 ---
 def learn_mission(request):
+
+
     return render(request, 'deliverys/learn_mission.html')
+
+
 
 def learn_search(request):
     return render(request, 'deliverys/learn_search.html')
@@ -116,10 +122,3 @@ def apply_menu(request): return render(request, 'deliverys/apply_menu.html')
 def apply_cart(request): return render(request, 'deliverys/apply_cart.html')
 def apply_payment(request): return render(request, 'deliverys/apply_payment.html')
 def apply_success(request): return render(request, 'deliverys/apply_success.html')
-
-# --learn_mission 몇인분 count 뽑기 --
-def learn_mission(request):
-    context = {
-        'count': random.randint(1,5),
-    }
-    return render(request, 'deliverys/learn_mission.html', context)
